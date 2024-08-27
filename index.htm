@@ -42,22 +42,25 @@
             }
         }
 
-        /* Mobile view: one below the other with space in between */
+        /* Mobile view: one below the other with adjustments */
         @media (max-width: 767px) {
             .iframe-container {
                 width: 100%; /* Stack on top of each other for mobile */
-                height: 50vh; /* Adjusted height for each iframe on mobile */
-                padding: 10px 0; /* Add padding to separate the iframes */
+                height: auto; /* Adjust to content height */
                 margin-bottom: 20px; /* Add margin to create white space separation */
+                padding: 10px 0; /* Add padding to separate the iframes */
+            }
+
+            iframe {
+                height: auto; /* Allow iframe to adjust to its content */
+                width: 100%;
+                transform: scale(0.85); /* Scale down content to fit better on mobile */
+                transform-origin: 0 0; /* Ensure scaling starts from the top left */
             }
 
             body {
                 display: block;
                 overflow-y: scroll; /* Enable vertical scrolling */
-            }
-
-            iframe {
-                height: 100vh; /* Ensure content fits in the iframe */
             }
         }
     </style>

@@ -20,9 +20,8 @@
         .iframe-container {
             box-sizing: border-box;
             margin: 0;
-            padding: 0;
+            padding: 10px;
             border: none;
-            height: 100vh;
         }
 
         iframe {
@@ -35,6 +34,7 @@
         @media (min-width: 768px) {
             .iframe-container {
                 width: 49%; /* Side by side for larger screens */
+                height: 100vh; /* Full viewport height */
             }
 
             body {
@@ -42,16 +42,22 @@
             }
         }
 
-        /* Mobile view: one below the other */
+        /* Mobile view: one below the other with space in between */
         @media (max-width: 767px) {
             .iframe-container {
                 width: 100%; /* Stack on top of each other for mobile */
-                height: 50vh; /* Half height for each iframe on mobile */
+                height: 50vh; /* Adjusted height for each iframe on mobile */
+                padding: 10px 0; /* Add padding to separate the iframes */
+                margin-bottom: 20px; /* Add margin to create white space separation */
             }
 
             body {
                 display: block;
                 overflow-y: scroll; /* Enable vertical scrolling */
+            }
+
+            iframe {
+                height: 100vh; /* Ensure content fits in the iframe */
             }
         }
     </style>
@@ -59,11 +65,11 @@
 <body>
 
     <div class="iframe-container">
-        <iframe src="https://reginaldy.github.io/ddintcheck/" title="Drug Interaction Check"></iframe>
+        <iframe src="https://reginaldy.github.io/ddintcheck/" title="Drug Interaction Checker"></iframe>
     </div>
 
     <div class="iframe-container">
-        <iframe src="https://reginaldy.github.io/drugcalcul/" title="Drug Dose Calculator"></iframe>
+        <iframe src="https://reginaldy.github.io/drugcalcul/" title="Dose Calculator Aid"></iframe>
     </div>
 
 </body>

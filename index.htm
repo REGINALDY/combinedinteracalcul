@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined Webpage</title>
+    <title>CodedwithChatGPT</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 20px 0;
-            font-size: 2em;
-            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .iframe-container {
-            display: inline-block;
-            width: 49%; /* Slightly less than half to account for any spacing issues */
-            height: 90vh; /* Adjust the height as needed */
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             border: none;
+            height: 100vh;
         }
 
         iframe {
@@ -34,11 +30,33 @@
             height: 100%;
             border: none;
         }
+
+        /* Desktop view: side by side */
+        @media (min-width: 768px) {
+            .iframe-container {
+                width: 49%; /* Side by side for larger screens */
+            }
+
+            body {
+                overflow: hidden; /* Remove scroll bar */
+            }
+        }
+
+        /* Mobile view: one below the other */
+        @media (max-width: 767px) {
+            .iframe-container {
+                width: 100%; /* Stack on top of each other for mobile */
+                height: 50vh; /* Half height for each iframe on mobile */
+            }
+
+            body {
+                display: block;
+                overflow-y: scroll; /* Enable vertical scrolling */
+            }
+        }
     </style>
 </head>
 <body>
-
-    <h1>Combined Webpages</h1>
 
     <div class="iframe-container">
         <iframe src="https://reginaldy.github.io/ddintcheck/" title="Drug Interaction Check"></iframe>
